@@ -16,8 +16,8 @@ pip install -r requirements-dev.txt
 uvicorn app.main:app --reload
 ```
 
-L'API répond sur http://localhost:8000 et sa documentation interactive est sur
-http://localhost:8000/docs.
+L'API répond sur [http://localhost:8000](http://localhost:8000) et sa documentation interactive est sur
+[http://localhost:8000/docs](http://localhost:8000/docs).
 
 ## Vérifier le code
 
@@ -27,6 +27,8 @@ ruff check .     # lint
 ruff format .    # mise en forme
 ```
 
+
+
 ## Lancer avec Docker
 
 ```bash
@@ -34,32 +36,48 @@ docker build -t taskflow .
 docker run --rm -p 8000:8000 taskflow
 ```
 
+
+
 ## Endpoints
 
-| Méthode | Chemin | Rôle |
-| --- | --- | --- |
-| GET | `/health` | État de l'API et version |
-| GET | `/tasks` | Liste des tâches |
-| GET | `/tasks/search?q=...` | Recherche dans les titres |
-| POST | `/tasks` | Crée une tâche (`{"title": "..."}`) |
-| GET | `/tasks/{id}` | Détail d'une tâche |
-| PATCH | `/tasks/{id}/done` | Marque une tâche comme faite |
-| DELETE | `/tasks/{id}` | Supprime une tâche (en-tête `X-API-Token` requis) |
+
+| Méthode | Chemin                | Rôle                                              |
+| ------- | --------------------- | ------------------------------------------------- |
+| GET     | `/health`             | État de l'API et version                          |
+| GET     | `/tasks`              | Liste des tâches                                  |
+| GET     | `/tasks/search?q=...` | Recherche dans les titres                         |
+| POST    | `/tasks`              | Crée une tâche (`{"title": "..."}`)               |
+| GET     | `/tasks/{id}`         | Détail d'une tâche                                |
+| PATCH   | `/tasks/{id}/done`    | Marque une tâche comme faite                      |
+| DELETE  | `/tasks/{id}`         | Supprime une tâche (en-tête `X-API-Token` requis) |
+
+
+
 
 ## Configuration
 
-| Variable | Rôle | Défaut |
-| --- | --- | --- |
-| `APP_VERSION` | Version affichée par `/health` | `0.1.0` |
-| `DB_PATH` | Fichier SQLite | `taskflow.db` |
-| `API_TOKEN` | Jeton exigé pour supprimer une tâche | vide (suppression désactivée) |
-| `NOTIFY_WEBHOOK_URL` | Webhook appelé à chaque création de tâche | vide (désactivé) |
+
+| Variable             | Rôle                                      | Défaut                        |
+| -------------------- | ----------------------------------------- | ----------------------------- |
+| `APP_VERSION`        | Version affichée par `/health`            | `0.1.0`                       |
+| `DB_PATH`            | Fichier SQLite                            | `taskflow.db`                 |
+| `API_TOKEN`          | Jeton exigé pour supprimer une tâche      | vide (suppression désactivée) |
+| `NOTIFY_WEBHOOK_URL` | Webhook appelé à chaque création de tâche | vide (désactivé)              |
+
+
+
 
 ## Équipe
 
 - Brendan BOISEAUX
 - Vincent RAOUL
 
+
+
 ## Gouvernance du dépôt
 
 ![Push error](./assets/image.png)
+
+## Pipeline CI
+
+![Pipeline error](./assets/break-pipeline.png)
