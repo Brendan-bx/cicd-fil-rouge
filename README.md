@@ -1,3 +1,5 @@
+[![.github/workflows/ci.yml](https://github.com/Brendan-bx/cicd-fil-rouge/actions/workflows/ci.yml/badge.svg)](https://github.com/Brendan-bx/cicd-fil-rouge/actions/workflows/ci.yml)
+
 # TaskFlow — dépôt fil rouge CI/CD
 
 TaskFlow est une petite API de gestion de tâches écrite en Python avec FastAPI.
